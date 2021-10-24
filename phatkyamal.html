@@ -140,11 +140,11 @@ div {
 p{
 font-family: myFirstFont;
 }
-.marquee {
-        width: 100%;
-        padding: 10px 0;
-        background-color: #FF4B9BF1;
-      }
+#marquee {
+    font-size: 30pt;
+    font-weight: bold;
+    font-family: myFirstFont;	
+}
 </style>
   </head>
   <body>
@@ -190,7 +190,8 @@ font-family: myFirstFont;
 
 	  </ul>
 	  <div class="center">
-		<marquee direction="scroll" bgcolor="#FF4B9BF1" ><font size="5">💓 Welcom to my blogger 💓 </font></marquee>
+		  <marquee id="marquee">Text Color Changes</marquee>
+		  
 	</div>
 	</div>
 <script>
@@ -226,6 +227,17 @@ function myFunction() {
 	  }
 	 }
   
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+$marquee = document.getElementById('marquee');
+$marquee.style.color = getRandomColor();
+
 </script>
 
   </body>
